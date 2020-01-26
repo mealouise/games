@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Octopus catcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="otto" style="position:absolute; -webkit-transition: all 0.5s;" src="octopus.png" width="100" onmousedown="caughtIt()"> <!-- the webkit-transition property means the octopus will move graudally over specific amount of time-->
+    <p id="scoreText">Score:0</p> <!--paragraph to show the score on screen-->
+    <script>
+        let score= 0;
+        let seconds =0;
+        let timer=window.setInterval(moveIt,1000);
+
+        function moveIt() {
+            seconds++;
+            document.getElementById("otto").style.left=Math.random()*900+"px";
+            document.getElementById("otto").style.top=Math.random()*700+"px";
+          
+            if(seconds>10) {
+                clearInterval(timer);
+                alert("You scored:" + score);
+                location.reload();
+            }
+        }
+        function caughtIt() {
+            score++;
+            document.getElementById("scoreText").innerText="Score:"+score;
+        }
+    </script>
+</body>
+</html>

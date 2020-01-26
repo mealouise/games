@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mouse catcher game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="cat" style="position:absolute;width:50px;top:500px;left:300px;webkit-transition:all 0.2s;" src="cat.jpg"> <!--use inline styles when the value of the property changes with javascript-->
+    <img id="mouse" style="position:absolute;width:50px; top:0px; left:0px; -webkit-transition: all 0.2s" src="mouse.png">
+    <p id="scoreTB" style="position:absolute;left:50px;color:yellow;font-size:28px;font-family:Arial;">Score:0</p>
+    <p id="livesTB" style="position:absolute;right:50px;color:yellow;font-size:28px;font-family:Arial;">Lives:3</p>
+
+    <script>
+    let score = 0;
+    let lives = 3;
+    let catX = 6;
+    let catY = 10;
+    let mouseX = 8;
+    let mouseY = 0;
+
+    function setLeft(id,x) {
+        document.getElementById(id).style.left=x+"px";
+    }
+
+    function setTop(id,y) {
+        document.getElementById(id).style.top=y+"px";
+    }
+    
+    function randomNumber(low,high) {
+        return(Math.floor(low+Math.random() *(1+high-low)));
+    }
+    
+    let gameTimer = window.setInterval(moveMouse,200);
+
+    document.onkeydown=handleKeys;
+
+    function handleKeys(e) {
+        if(e.keyCode==37) {
+            catX--;
+        } if (e.keyCode==39) {
+            catX++;
+        } 
+        setLeft("cat", catX*50);
+        setTop("cat", catY*50);
+        
+    }
+
+    function moveMouse() {
+        mouseY++;
+        setLeft("mouse", mouseX*50);
+        setTop("mouse", mouseY*50);
+        if (mouseY>catY+5) {missedMouse();}
+        if ((catX==mouseX) && (catY==mouseY)){caughtMouse();}
+    }
+    
+    function missedMouse() {
+        mouseY=0;
+        mouseX=randomNumber(2,16);
+        lives--;
+        document.getElementById("livesTB").innerText="Lives:" +lives;
+        if(lives==0){gameOver();}
+    }
+
+    function caughtMouse() {
+        mouseY=0;
+        mouseX=randomNumber(2,16);
+        score++;
+        document.getElementById("scoreTB").innerHTML="Score:"+score;
+    }
+
+    function gameOver() {
+        alert("Game over!You scored:"+score);
+        location.reload();
+    }
+    
+    
+    </script>
+</body>
+</html>

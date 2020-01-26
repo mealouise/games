@@ -1,0 +1,137 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #ff9933 0%, #ff5050 100%);
+}
+
+p {
+    font-weight: 500;
+}
+
+#diceImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+#playerScore {
+    background: #EE7600;
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #EE7600;
+    margin: 0;
+}
+#player2Score {
+    background: #EE7600;
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #EE7600;
+    margin: 0;
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left {
+    left: 0;
+    background-color: #ffcc66;
+}
+
+.right {
+    right: 0;
+    background: white;
+}
+
+#holdButton {
+    background: rgba(0, 0, 0, 0);
+    font-size: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold; 
+}
+
+#rollButton {
+    background: rgba(0, 0, 0, 0);
+    font-size: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/*
+#playerTotalScore {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playerScore, h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playerStatus {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.diceBorder {
+    border: 5px solid white;
+    margin-left: auto;
+    margin-right:auto;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.diceBorder2 {
+    border: 5px solid white;
+    margin-left: auto;
+    margin-right:auto;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+
+} */

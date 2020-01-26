@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Balloon Popper</title>
+    
+</head>
+<body>
+    <img id="balloon" onmousedown="popped()" src="balloon.png" style="position:absolute; width:100px; top:500px; left:500px;">
+    <p id="scoreText" style="color:orange; font-size:20px; font-family:Arial">Score:0</p>
+
+    <!--now defined the elements that go on the page need to:
+    create variables we need
+define some functions to get and set co-ordinates
+define simple function to generate random numbers
+start a timer-->
+<script>
+// create variables to store the score and balloon speed
+let score=0;
+let speed=1;
+// define functions to set any elements co-ordinates
+function setLeft(id,x) {document.getElementById(id).style.left=x+"px";}
+function setTop(id,y) {document.getElementById(id).style.top=y+"px";}
+
+// define functions to get any elements co-ordinates
+function getLeft(id){return document.getElementById(id).offsetLeft;}
+function getTop(id){return document.getElementById(id).offsetTop;}
+
+// define function that returns a random number between 2 values
+function randomNumber(low,high){return(Math.floor(low+Math.random()*(1+high-low)));}
+
+//timer will run a function floatup every 25miliseconds
+let gameTimer=window.setInterval(floatUp,25);
+
+
+// function that makes the balloon float upwards
+function floatUp() {
+// find out how far the balloon is from the top of the window and store as y
+    let y=getTop("balloon"); 
+
+    // if the balloon has gone past the top of the screen then y will be less than -100, if it has gone over the top run the function
+    if(y<-100) {
+        gameOver();
+    }
+    // move the balloon up by using the setTop function, this is done by subtracting the speed value from y
+    setTop("balloon", y-speed);
+}
+
+function popped() {
+    // increase the score by 1
+    score++;
+    // make the next balloon move faster by increasing the speed by one
+    speed++;
+    // show the score at the top of the screen
+    document.getElementById("scoreText").innerText="Score:"+score;
+    // set how far the balloon is from the left of the screen to be a random value
+    setLeft("balloon", randomNumber(0,window.innerWidth-100));
+    // move the balloon to the very bottom of the screen
+    setTop("balloon", window.innerHeight);
+}
+// when the balloon reaches the top of the screen the game is over so need function gameover
+function gameOver() {
+    // stop the timer running so the balloon wont move anymore
+    clearInterval(gameTimer);
+    // show a message telling the player the game is over and showing their score
+    alert("Game over! You scored:"+ score);
+    // reload the page and start again
+    location.reload();
+}
+
+
+</script>
+</body>
+</html>

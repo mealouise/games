@@ -1,0 +1,92 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #ff9933 0%, #ff5050 100%);
+}
+
+p {
+    font-weight: bold;
+}
+
+#diceImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#roll {
+    background-color: #ffcc66;
+    font-size: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+}
+
+#playerTotalScore {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playerScore, h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playerStatus {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.diceBorder {
+    border: 5px solid white;
+    margin-left: auto;
+    margin-right:auto;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+.statsBoard {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    }
+
+
+
+
+    /* flex-direction: column;
+    flex-wrap: wrap; */
+    /* flex-direction: column; */
+    
+    /* align-items: center; */
+
+  
+    
+    
+
+
+
+
+h1 {
+    text-align: center;
+}
