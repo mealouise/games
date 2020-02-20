@@ -1,5 +1,7 @@
 //team 1
-
+const startButton = document.getElementById("startGame");
+const startScreen = document.getElementById("startScreen");
+const scoreBoard = document.getElementById("scoreBoard");
 const timer = document.getElementById("timer");
 const tryButton1 = document.getElementById("try1");
 const conversionButton1 = document.getElementById("conversion1");
@@ -15,14 +17,10 @@ const dropGoalButton2 = document.getElementById("dropgoal2");
 const team2TotalScore = document.getElementById("team2TotalScore");
 
 
-
-
-
-
 let team;
 let teamOneTotal = 0;
 let teamTwoTotal =0;
-let timer = 80;
+let clock = 0;
 let team1Score = 0;
 let team2Score = 0;
 let tryScore = 5;
@@ -31,12 +29,26 @@ let penalty = 3;
 let dropGoal = 3;
 
 
-const setTimer = ()  => {
-    let currentTimer = timer;
+// const setTimer = ()  => {
+//     let currentTimer = timer;
+// }
+
+const startScoreboard = () => {
+    clock++;
+    console.log('clock', clock);
+    timer.textContent = clock;
+    if (clock === 5) {
+        tryButton1.disabled = true;
+        return;
+    }
+    setTimeout(startScoreboard, 1000);
 }
 
-
-
+startButton.addEventListener("click", () => {
+    startScreen.style.display = "none";
+    scoreBoard.style.display = "flex";
+    startScoreboard();
+})
 
 //team 1
 tryButton1.addEventListener("click", () => {

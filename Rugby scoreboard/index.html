@@ -8,25 +8,32 @@
 </head>
 <body>
     <h1>Rugby Scoreboard</h1>
-    <div id="start">
-        <p id="timer">timee</p>
+
+    <div class="board" id="startScreen">
+        <button id="startGame">Start</button>
     </div>
-    <p id="gameStatus"></p>
-    <div class="container">
-    <div class="team1">
-        <h2 id="team1TotalScore"></h2>
-        <button id="try1">Try</button>
-        <button id="conversion1">Conversion</button>
-        <button id="penalty1">Penalty</button>
-        <button id="dropgoal1">Drop goal</button>
-    </div>
-    <div class="team2">
-        <h2 id="team2TotalScore"></h2>
-        <button id="try2">Try</button>
-        <button id="conversion2">Conversion</button>
-        <button id="penalty2">Penalty</button>
-        <button id="dropgoal2">Drop goal</button>
-    </div>
+
+    <div class="board" id="scoreBoard">
+        <div id="timer"></div>
+        <p id="gameStatus"></p>
+        <div class="boardActions">
+            <div class="team1">
+                <h2>Team 1</h2>
+                <h3 id="team1TotalScore"></h3>
+                <button id="try1">Try</button>
+                <button id="conversion1">Conversion</button>
+                <button id="penalty1">Penalty</button>
+                <button id="dropgoal1">Drop goal</button>
+            </div>
+            <div class="team2">
+                <h2>Team 2</h2>
+                <h3 id="team2TotalScore"></h3>
+                <button id="try2">Try</button>
+                <button id="conversion2">Conversion</button>
+                <button id="penalty2">Penalty</button>
+                <button id="dropgoal2">Drop goal</button>
+            </div>
+        </div>
     </div>
 
 
