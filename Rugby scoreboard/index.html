@@ -7,39 +7,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rugby Scoreboard</h1>
+    <h1 class="title">RUGBY SIX NATIONS SCOREBOARD</h1>
 
     <div class="board" id="startScreen">
-        <button id="startGame">Start</button>
+        <button id="startGame">START!</button>
+        <input id="input1" type="text" placeholder="Enter Team Name">
+        <button id="button1">Submit</button>
     </div>
 
     <div class="board" id="scoreBoard">
-        <div id="timer"></div>
-        <p id="gameStatus"></p>
-        <div class="boardActions">
-            <div class="team1">
-                <h2>Team 1</h2>
-                <h3 id="team1TotalScore"></h3>
-                <h3 id="tryCountTeam1"></h3>
-                <button id="try1">Try</button>
-                <button id="conversion1">Conversion</button>
-                <button id="penalty1">Penalty</button>
-                <button id="dropgoal1">Drop goal</button>
-            </div>
-            <div class="team2">
-                <h2>Team 2</h2>
-                <h3 id="team2TotalScore"></h3>
-                <button id="try2">Try</button>
-                <button id="conversion2">Conversion</button>
-                <button id="penalty2">Penalty</button>
-                <button id="dropgoal2">Drop goal</button>
-            </div>
+        <div class="boardTemplate">
+        <div class="row1">
+            <h2 class="team1">TEAM 1</h2>
+            <div id="timer"></div>
+            <h2 class="team2">TEAM 2</h2>
         </div>
+    <div class="row2">
+        <h3 class="count" id="tryCountTeam1">1</h3>
+        <button class="plusButton" id="try1">+</button>
+        <p>TRIES</p>
+        <button class="plusButton" id="try2">+</button>
+        <h3 class="count" id="tryCountTeam2">1</h3>
     </div>
-
-
-
-
+    <div class="row3">
+        <h3 class="count" id="conversionTeam1">1</h3>
+        <button class="plusButton" id="conversion1">+</button>
+        <p>CONVERSION</p>
+        <button class="plusButton" id="conversion2">+</button>
+        <h3 class="count" id="tryConversionTeam2">1</h3>
+    </div>
+    <div class="row4">
+        <h3 class="count" id="penaltyTeam1">1</h3>
+        <button class="plusButton" id="penalty1">+</button>
+        <p>PENALTIES</p>
+        <button class="plusButton" id="penalty2">+</button>
+        <h3 class="count" id="penaltyTeam2">1</h3>
+    </div>
+    <div class="row5">
+        <h3 class="count" id="dropGoalTeam1">1</h3>
+        <button class="plusButton" id="dropgoal1">+</button>
+        <p>DROP GOALS</p>
+        <button class="plusButton" id="dropgoal2">+</button>
+        <h3 class="count" id="dropGoalTeam2">1</h3>
+    </div>
+    <div class="row6">
+        <h3 id="team1TotalScore">1</h3>
+        <p>TOTAL</p>
+        <h3 id="team2TotalScore">1</h3>
+    </div>
+    <div>
+    <button id="resetButton">Reset</button>
+    </div>
+    </div>
+</div>
 
     <script src="index.js"></script>
     
