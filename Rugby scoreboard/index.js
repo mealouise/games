@@ -8,6 +8,12 @@ const conversionButton1 = document.getElementById("conversion1");
 const penaltyButton1 = document.getElementById("penalty1");
 const dropGoalButton1 = document.getElementById("dropgoal1")
 const team1TotalScore = document.getElementById("team1TotalScore");
+const tryCountTeam1 = document.getElementById("tryCountTeam1");
+
+
+
+
+
 
 //team 2
 const tryButton2 = document.getElementById("try2");
@@ -28,6 +34,22 @@ let conversion = 2;
 let penalty = 3;
 let dropGoal = 3;
 
+let tryCount1 = 0;
+let conversionCount1 = 0;
+let penaltyCount1 = 0;
+let dropGoalCount1 = 0;
+
+let tryCount2 = 0;
+let conversionCount2 = 0;
+let penaltyCount2 = 0;
+let dropGoalCount2 = 0;
+
+
+
+// const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+// const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+// const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
 
 // const setTimer = ()  => {
 //     let currentTimer = timer;
@@ -37,8 +59,16 @@ const startScoreboard = () => {
     clock++;
     console.log('clock', clock);
     timer.textContent = clock;
-    if (clock === 5) {
+    // timer.textContent = hours + "h " + minutes + "m " + seconds + "s ";
+    if (clock === 10) {
         tryButton1.disabled = true;
+        conversionButton1.disabled = true;
+        penaltyButton1.disabled = true;
+        dropGoalButton1.disabled = true;
+        tryButton2.disabled = true;
+        conversionButton2.disabled = true;
+        penaltyButton2.disabled = true;
+        dropGoalButton2.disabled = true;
         return;
     }
     setTimeout(startScoreboard, 1000);
@@ -54,8 +84,12 @@ startButton.addEventListener("click", () => {
 tryButton1.addEventListener("click", () => {
     console.log("button 1 try clicked")
     team1Score += tryScore;
+    tryCount1++;
     console.log(`my total is ${team1Score}`);
     team1TotalScore.textContent = team1Score;
+    tryCountTeam1.textContent = tryCount1;
+
+
 
     // team1Score.textContent = 'Total score is '
 })
@@ -84,20 +118,27 @@ dropGoalButton1.addEventListener("click", () => {
 tryButton2.addEventListener("click", () => {
     console.log("button 2 try clicked")
     team2Score += tryScore;
-    team2TotalScore.textContent = team1Score;
+    team2TotalScore.textContent = team2Score;
 
 })
 
 conversionButton2.addEventListener("click", () => {
     console.log("conversion 2 clicked")
+    team2Score += conversion;
+    team2TotalScore.textContent = team2Score;
+
 })
 
 penaltyButton2.addEventListener("click", () => {
     console.log("penalty 2 clicked")
+    team2Score += penalty;
+    team2TotalScore.textContent = team2Score;
 })
 
 dropGoalButton2.addEventListener("click", () => {
     console.log("drop goal 2 is clicked")
+    team2Score += dropGoal;
+    team2TotalScore.textContent = team2Score;
 })
 
 
