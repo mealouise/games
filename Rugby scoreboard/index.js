@@ -58,6 +58,8 @@ let dropGoalCount2 = 0;
 let minutes = 0;
 let seconds = 0;
 
+const gameSpeed = 1000;
+
 
 const startScoreboard = () => {
 
@@ -85,7 +87,7 @@ const startScoreboard = () => {
     }
    
 
-    setTimeout(startScoreboard, 500);
+    setTimeout(startScoreboard, gameSpeed);
 }
 
 startButton.addEventListener("click", () => {
@@ -96,6 +98,9 @@ startButton.addEventListener("click", () => {
 })
 
 const reset = () => {
+    console.log("reset button clicked")
+    minutes = 0;
+    seconds = 0;
     tryCount1 = 0;
     conversionCount1 = 0;
     penaltyCount1 = 0;
@@ -104,20 +109,20 @@ const reset = () => {
     conversionCount2 = 0;
     penaltyCount2 = 0;
     dropGoalCount2 = 0;
-    tryCountTeam1.textContent = 0
-    conversionTeam1.textContent = 0 
-    penaltyTeam1.textContent = 0
-    dropGoalTeam1.textContent = 0
-    tryCountTeam2.textContent = 0
-    conversionTeam2.textContent = 0 
-    penaltyTeam2.textContent = 0
-    dropGoalTeam2.textContent = 0
+    tryCountTeam1.textContent = 0;
+    conversionTeam1.textContent = 0;
+    penaltyTeam1.textContent = 0;
+    dropGoalTeam1.textContent = 0;
+    tryCountTeam2.textContent = 0;
+    conversionTeam2.textContent = 0;
+    penaltyTeam2.textContent = 0;
+    dropGoalTeam2.textContent = 0;
 }
 
 
 
 resetButton.addEventListener("click", () => {
-    startScreen.style.display = "block";
+    startScreen.style.display = "flex";
     scoreBoard.style.display = "none";
     // tryCountTeam1.textContent = 0;
     // conversionTeam1.textContent = 0;
