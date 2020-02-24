@@ -55,21 +55,24 @@ let conversionCount2 = 0;
 let penaltyCount2 = 0;
 let dropGoalCount2 = 0;
 
+let minutes = 0;
+let seconds = 0;
 
 
-// const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-// const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-// const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const startScoreboard = () => {
 
-const showTime = () => {
-    let date = new Date();
-    let m = date.getMinutes(); //0-59
-    let s = date.getSeconds(); //0-59
+    seconds++;
+    if ( seconds === 60) {
+        seconds = 0;
+        minutes++;
+    } 
 
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
+    let displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    let displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
 
-    if (m == 43) {
+    timer.textContent = displayMinutes + ":" + displaySeconds;
+
+    if ( minutes === 1) {
         tryButton1.disabled = true;
         conversionButton1.disabled = true;
         penaltyButton1.disabled = true;
@@ -78,41 +81,18 @@ const showTime = () => {
         conversionButton2.disabled = true;
         penaltyButton2.disabled = true;
         dropGoalButton2.disabled = true;
-        return
+        return;
     }
+   
 
-    let time = m + ":" + s;
-    document.getElementById("timer").innerText = time;
-    document.getElementById("timer").textContent = time;
-
-    setTimeout(showTime, 1000);
+    setTimeout(startScoreboard, 500);
 }
-
-
-// const startScoreboard = () => {
-//     clock++;
-//     console.log('clock', clock);
-//     timer.textContent = clock;
-//     // timer.textContent = hours + "h " + minutes + "m " + seconds + "s ";
-//     if (clock === 10) {
-//         tryButton1.disabled = true;
-//         conversionButton1.disabled = true;
-//         penaltyButton1.disabled = true;
-//         dropGoalButton1.disabled = true;
-//         tryButton2.disabled = true;
-//         conversionButton2.disabled = true;
-//         penaltyButton2.disabled = true;
-//         dropGoalButton2.disabled = true;
-//         return;
-//     }
-//     setTimeout(startScoreboard, 1000);
-// }
 
 startButton.addEventListener("click", () => {
     startScreen.style.display = "none";
     scoreBoard.style.display = "flex";
-    // startScoreboard();
-    showTime();
+    startScoreboard();
+    
 })
 
 const reset = () => {

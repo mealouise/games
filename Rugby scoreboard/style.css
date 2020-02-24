@@ -27,40 +27,18 @@
 }
 
 #startScreen {
- 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.row1{
+.row{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size:20px;
 }
 
-.row2 {
-    display: flex;
-    justify-content: space-between;
-}
-
-.row3 {
-    display: flex; 
-    justify-content: space-between;
-}
-
-.row4 {
-    display: flex; 
-    justify-content: space-between;
-}
-
-.row5 {
-    display: flex; 
-    justify-content: space-between;
-}
-
-.row6 {
-    display: flex; 
-    justify-content: space-between;
-}
 
 .boardTemplate {
     text-align: center;
@@ -155,7 +133,7 @@ p {
     /* display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:column;
+    flex-direction:column;*/
 }
 
 #timer {
