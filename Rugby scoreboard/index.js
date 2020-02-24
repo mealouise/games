@@ -16,8 +16,10 @@ const tryCountTeam1 = document.getElementById("tryCountTeam1");
 const conversionTeam1 = document.getElementById("tryConversionTeam1");
 const penaltyTeam1 = document.getElementById("penaltyTeam1");
 const dropGoalTeam1 = document.getElementById("dropGoalTeam1");
-
-
+const teamOneNameDisplay = document.getElementById("teamOneName");
+const teamTwoNameDisplay = document.getElementById("teamTwoName");
+const teamOneInput = document.getElementById("teamOneInput");
+const teamTwoInput = document.getElementById("teamTwoInput");
 
 
 
@@ -34,7 +36,8 @@ const penaltyTeam2 = document.getElementById("penaltyTeam2");
 const dropGoalTeam2 = document.getElementById("dropGoalTeam2");
 
 
-let team;
+let teamOneName = "";
+let teamTwoName = "";
 let teamOneTotal = 0;
 let teamTwoTotal =0;
 let clock = 0;
@@ -90,9 +93,20 @@ const startScoreboard = () => {
     setTimeout(startScoreboard, gameSpeed);
 }
 
+teamOneInput.addEventListener("change", () => {
+    teamOneName = teamOneInput.value;
+    console.log("team name added");
+})
+
+teamTwoInput.addEventListener("change", () => {
+    teamTwoName = teamTwoInput.value;
+})
+
 startButton.addEventListener("click", () => {
     startScreen.style.display = "none";
     scoreBoard.style.display = "flex";
+    teamOneNameDisplay.textContent = teamOneName;
+    teamTwoNameDisplay.textContent = teamTwoName;
     startScoreboard();
     
 })
