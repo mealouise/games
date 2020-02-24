@@ -61,17 +61,15 @@ let dropGoalCount2 = 0;
 // const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 // const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+const showTime = () => {
+    let date = new Date();
+    let m = date.getMinutes(); //0-59
+    let s = date.getSeconds(); //0-59
 
-// const setTimer = ()  => {
-//     let currentTimer = timer;
-// }
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
 
-const startScoreboard = () => {
-    clock++;
-    console.log('clock', clock);
-    timer.textContent = clock;
-    // timer.textContent = hours + "h " + minutes + "m " + seconds + "s ";
-    if (clock === 10) {
+    if (m == 43) {
         tryButton1.disabled = true;
         conversionButton1.disabled = true;
         penaltyButton1.disabled = true;
@@ -80,24 +78,73 @@ const startScoreboard = () => {
         conversionButton2.disabled = true;
         penaltyButton2.disabled = true;
         dropGoalButton2.disabled = true;
-        return;
+        return
     }
-    setTimeout(startScoreboard, 1000);
+
+    let time = m + ":" + s;
+    document.getElementById("timer").innerText = time;
+    document.getElementById("timer").textContent = time;
+
+    setTimeout(showTime, 1000);
 }
 
-// button.addEventListener("click", () => {
-//     team1.textContent = input.value; 
-// })
+
+// const startScoreboard = () => {
+//     clock++;
+//     console.log('clock', clock);
+//     timer.textContent = clock;
+//     // timer.textContent = hours + "h " + minutes + "m " + seconds + "s ";
+//     if (clock === 10) {
+//         tryButton1.disabled = true;
+//         conversionButton1.disabled = true;
+//         penaltyButton1.disabled = true;
+//         dropGoalButton1.disabled = true;
+//         tryButton2.disabled = true;
+//         conversionButton2.disabled = true;
+//         penaltyButton2.disabled = true;
+//         dropGoalButton2.disabled = true;
+//         return;
+//     }
+//     setTimeout(startScoreboard, 1000);
+// }
 
 startButton.addEventListener("click", () => {
     startScreen.style.display = "none";
     scoreBoard.style.display = "flex";
-    startScoreboard();
+    // startScoreboard();
+    showTime();
 })
+
+const reset = () => {
+    tryCount1 = 0;
+    conversionCount1 = 0;
+    penaltyCount1 = 0;
+    dropGoalCount1 = 0;
+    tryCount2 = 0;
+    conversionCount2 = 0;
+    penaltyCount2 = 0;
+    dropGoalCount2 = 0;
+    tryCountTeam1.textContent = 0
+    conversionTeam1.textContent = 0 
+    penaltyTeam1.textContent = 0
+    dropGoalTeam1.textContent = 0
+    tryCountTeam2.textContent = 0
+    conversionTeam2.textContent = 0 
+    penaltyTeam2.textContent = 0
+    dropGoalTeam2.textContent = 0
+}
+
+
 
 resetButton.addEventListener("click", () => {
     startScreen.style.display = "block";
     scoreBoard.style.display = "none";
+    // tryCountTeam1.textContent = 0;
+    // conversionTeam1.textContent = 0;
+    // penaltyTeam1.textContent = 0;
+    // dropGoalTeam2.textContent = 0;
+    // tryCount2.textContent = 0;
+    reset();
 })
 
 
