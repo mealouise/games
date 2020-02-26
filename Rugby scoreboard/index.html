@@ -8,51 +8,54 @@
 </head>
 <body>
     <h1 class="title">RUGBY SIX NATIONS SCOREBOARD</h1>
-
+    <h5 id="commentary"></h5>
+    <h5 id="commentaryTwo"></h5>
     <div class="board" id="startScreen">
+        <label class="team-label">Team One</label>
+        <input class="team-input" id="teamOneInput" type="text" placeholder="Enter Team Name">
+        <label class="team-label">Team Two</label>
+        <input class="team-input" id="teamTwoInput" type="text" placeholder="Enter Team Name">
         <button id="startGame">START!</button>
-        <input id="teamOneInput" type="text" placeholder="Enter Team Name">
-        <input id="teamTwoInput" type="text" placeholder="Enter Team Name">
     </div>
 
     <div class="board" id="scoreBoard">
         <div class="boardTemplate">
         <div class="row">
-            <h2 class="team1" id="teamOneName">TEAM 1</h2>
+            <h2 class="team1" id="teamOneName"></h2>
             <div id="timer"></div>
-            <h2 class="team2" id="teamTwoName">TEAM 2</h2>
+            <h2 class="team2" id="teamTwoName"></h2>
         </div>
     <div class="row">
-        <h3 class="count" id="tryCountTeam1">0</h3>
-        <button class="plusButton" id="try1">+</button>
+        <h3 class="countLeft" id="tryCountTeam1">0</h3>
+        <button class="plusButton buttonLeft" id="try1">+</button>
         <p class="scoreTitle">TRIES</p>
-        <button class="plusButton" id="try2">+</button>
-        <h3 class="count" id="tryCountTeam2">0</h3>
+        <button class="plusButton buttonRight" id="try2">+</button>
+        <h3 class="countRight"  id="tryCountTeam2">0</h3>
     </div>
     <div class="row">
-        <h3 class="count" id="tryConversionTeam1">0</h3>
-        <button class="plusButton" id="conversion1">+</button>
+        <h3 class="countLeft" id="tryConversionTeam1">0</h3>
+        <button class="plusButton buttonLeft" id="conversion1">+</button>
         <p class="scoreTitle">CONVERSION</p>
-        <button class="plusButton" id="conversion2">+</button>
-        <h3 class="count" id="tryConversionTeam2">0</h3>
+        <button class="plusButton buttonRight" id="conversion2">+</button>
+        <h3 class="countRight" id="tryConversionTeam2">0</h3>
     </div>
     <div class="row">
-        <h3 class="count" id="penaltyTeam1">0</h3>
-        <button class="plusButton" id="penalty1">+</button>
+        <h3 class="countLeft" id="penaltyTeam1">0</h3>
+        <button class="plusButton buttonLeft" id="penalty1">+</button>
         <p class="scoreTitle"> PENALTIES</p>
-        <button class="plusButton" id="penalty2">+</button>
-        <h3 class="count" id="penaltyTeam2">0</h3>
+        <button class="plusButton buttonRight" id="penalty2">+</button>
+        <h3 class="countRight" id="penaltyTeam2">0</h3>
     </div>
     <div class="row">
-        <h3 class="count" id="dropGoalTeam1">0</h3>
-        <button class="plusButton" id="dropgoal1">+</button>
+        <h3 class="countLeft" id="dropGoalTeam1">0</h3>
+        <button class="plusButton buttonLeft" id="dropgoal1">+</button>
         <p class="scoreTitle">DROP GOALS</p>
-        <button class="plusButton" id="dropgoal2">+</button>
-        <h3 class="count" id="dropGoalTeam2">0</h3>
+        <button class="plusButton buttonRight" id="dropgoal2">+</button>
+        <h3 class="countRight" id="dropGoalTeam2">0</h3>
     </div>
     <div class="row">
         <h3 id="team1TotalScore">0</h3>
-        <p class="scoreTitle">TOTAL</p>
+        <p class="scoreTitle">SCORE</p>
         <h3 id="team2TotalScore">0</h3>
     </div>
     <div>

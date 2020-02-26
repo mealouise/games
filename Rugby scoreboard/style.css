@@ -7,6 +7,7 @@
 
 #scoreBoard {
     display: none;
+    background-color: black;
 }
 
 #startScreen {
@@ -27,27 +28,40 @@
 }
 
 #team1TotalScore {
-    color: red;
-    font-size: 40px;
+    color: #00ff00;
+    font-size: 50px;
+    padding-left:40px;
 }
 
 #team2TotalScore {
-    color: red;
-    font-size: 40px;
+    color: #00ff00;
+    font-size: 50px;
+    padding-right:40px;
 }
 
-.count {
-    color: #ffcc00;
+.countLeft {
+    color: #00ff00;
+    padding-left: 40px;
     /* display:flex;
     align-items: center;
     justify-content: center; */
 }
 
-h2, h3 {
+.countRight {
+    color: #00ff00;
+    padding-right: 40px;
+}
+
+h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
 }
 
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
 p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
@@ -55,8 +69,8 @@ p {
 }
 
 #timer {
-    font-size: 50px;
-    color: #ffcc00;
+    color: #00ff00;
+    font-size:70px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -87,9 +101,10 @@ p {
 }
 
 .plusButton {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    /* border-radius: 50%; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +130,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
-    height: 850px;
+    height: 950px;
     border: 1px solid grey;
     border-radius: 3px;
     padding: 15px;
@@ -129,23 +144,17 @@ p {
     flex-direction:column;*/
 }
 
-#timer {
-    border: 1px solid grey;
-    font-size:40px;
-    padding: 10px;
-    color: #dbba56;
-}
-
 #startGame {
     background-color: blue;
-    font-size:40px;
+    font-size:30px;
     color: white;
     border-radius: 15px;
-    padding: 25px;
+    padding: 20px;
 }
 
 .scoreTitle {
     flex:1;
+    color:white;
 }
 .team1{
     flex:1;
@@ -155,4 +164,26 @@ p {
     flex:1;
 }
 
-/* add class name to the left buttons and then seperate for the right buttons and add margin left and margin right*/
+.buttonRight {
+    margin-right: 100px;
+}
+
+.buttonLeft {
+    margin-left: 100px;
+}
+
+.team1{
+    color:white;
+}
+
+.team2{
+    color:white;
+}
+
+.team-input {
+    margin-bottom: 40px;
+}
+
+.team-label {
+    font-family:Arial, Helvetica, sans-serif;
+}

@@ -20,6 +20,8 @@ const teamOneNameDisplay = document.getElementById("teamOneName");
 const teamTwoNameDisplay = document.getElementById("teamTwoName");
 const teamOneInput = document.getElementById("teamOneInput");
 const teamTwoInput = document.getElementById("teamTwoInput");
+const commentary = document.getElementById("commentary");
+const commentaryTwo = document.getElementById("commentaryTwo");
 
 
 
@@ -96,6 +98,8 @@ const startScoreboard = () => {
 teamOneInput.addEventListener("change", () => {
     teamOneName = teamOneInput.value;
     console.log("team name added");
+   
+
 })
 
 teamTwoInput.addEventListener("change", () => {
@@ -155,10 +159,7 @@ tryButton1.addEventListener("click", () => {
     team1TotalScore.textContent = team1Score;
     tryCount1++;
     tryCountTeam1.textContent = tryCount1;
-
-
-
-    // team1Score.textContent = 'Total score is '
+    commentary.textContent = `${teamOneName} scored a try`;
 })
 
 conversionButton1.addEventListener("click", () => {
@@ -166,7 +167,8 @@ conversionButton1.addEventListener("click", () => {
     team1Score += conversion;
     team1TotalScore.textContent = team1Score;
     conversionCount1++;
-    conversionTeam1.textContent = conversionCount1;  
+    conversionTeam1.textContent = conversionCount1;
+    commentary.textContent = `${teamOneName} scored a conversion`; 
 })
 
 penaltyButton1.addEventListener("click", () => {
@@ -174,7 +176,8 @@ penaltyButton1.addEventListener("click", () => {
     team1Score += penalty;
     team1TotalScore.textContent = team1Score;
     penaltyCount1++;
-    penaltyTeam1.textContent = penaltyCount1; 
+    penaltyTeam1.textContent = penaltyCount1;
+    commentary.textContent = `${teamOneName} scored a penalty`; 
 })
 
 dropGoalButton1.addEventListener("click", () => {
@@ -183,6 +186,7 @@ dropGoalButton1.addEventListener("click", () => {
     team1TotalScore.textContent = team1Score;
     dropGoalCount1++;
     dropGoalTeam1.textContent = dropGoalCount1;
+    commentary.textContent =  `${teamOneName} scored a drop goal`;
 
 })
 
@@ -193,6 +197,7 @@ tryButton2.addEventListener("click", () => {
     team2TotalScore.textContent = team2Score;
     tryCount2++;
     tryCountTeam2.textContent = tryCount2;
+    commentaryTwo.textContent = `${teamTwoName} scored a try`;
 
 })
 
@@ -201,7 +206,8 @@ conversionButton2.addEventListener("click", () => {
     team2Score += conversion;
     team2TotalScore.textContent = team2Score;
     conversionCount2++;
-    conversionTeam2.textContent = conversionCount2; 
+    conversionTeam2.textContent = conversionCount2;
+    commentaryTwo.textContent = `${teamTwoName} scored a conversion`;
 })
 
 penaltyButton2.addEventListener("click", () => {
@@ -210,6 +216,7 @@ penaltyButton2.addEventListener("click", () => {
     team2TotalScore.textContent = team2Score;
     penaltyCount2++;
     penaltyTeam2.textContent = penaltyCount2; 
+    commentaryTwo.textContent = `${teamTwoName} scored a penalty`;
 })
 
 dropGoalButton2.addEventListener("click", () => {
@@ -218,6 +225,7 @@ dropGoalButton2.addEventListener("click", () => {
     team2TotalScore.textContent = team2Score;
     dropGoalCount2++;
     dropGoalTeam2.textContent = dropGoalCount2;
+    commentaryTwo.textContent = `${teamTwoName} scored a drop goal`;
 })
 
 
